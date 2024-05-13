@@ -22,6 +22,7 @@ public class Main {
             String msg = "";
             System.out.println("Type a message for the server: ");
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            msg = br.readLine();
             DatagramPacket data = new DatagramPacket(msg.getBytes(), 0, msg.length(), group, portnumber);
             chatMulticastSocket.send(data);
 
